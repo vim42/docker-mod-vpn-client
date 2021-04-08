@@ -3,7 +3,7 @@ name: Build Image
 on: [push, pull_request, workflow_dispatch]
 
 env:
-  ENDPOINT: "vim42/docker-mod-vpn-client"
+  ENDPOINT: "monkie/docker-mod-vpn-client"
   BRANCH: "master"
 
 jobs:
