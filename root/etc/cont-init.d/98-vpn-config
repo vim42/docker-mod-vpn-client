@@ -1,26 +1,18 @@
 #!/usr/bin/with-contenv bash
 
 # Determine if setup is needed
-if [ ! -f /usr/local/lib/python***/dist-packages/sshuttle ] && \
+if [ ! -f /usr/sbin/openvpn ] && \
 [ -f /usr/bin/apt ]; then
   ## Ubuntu
   apt-get update
   apt-get install --no-install-recommends -y \
-    iptables \
-    openssh-client \
-    python3 \
-    python3-pip 
-  pip3 install sshuttle
+    openvpn 
 fi
-if [ ! -f /usr/lib/python***/site-packages/sshuttle ] && \
+if [ ! -f /usr/sbin/openvpn ] && \
 [ -f /sbin/apk ]; then
   # Alpine
   apk add --no-cache \
-    iptables \
-    openssh \
-    py3-pip \
-    python3 
-  pip3 install sshuttle
+    openvpn 
 fi
 
 chown -R root:root /root
